@@ -1,0 +1,74 @@
+<ion-view view-title="Cek Tagihan PDAM">
+  <ion-content class="padding" overflow-scroll="false">
+    <div class="dash-wrapper">
+      <div class="dash-inner">
+          <center>
+            <img src="img/logo.png" width="50%">
+          </center>
+          <center><h4>Masukan 10 digit nomor sambungan</h4></center>
+          <div class="list list-inset">
+            <label class="item item-input">
+              <input type="tel" ng-model='nomorSambung' id="nomor-sambung" ng-keypress="cekTagihan($event,nomorSambung)" style="font-size:24px;text-align:center;" selected>
+            </label>
+            <br>
+            <center>
+              <button class="button button-outline button-positive" ng-click="cek(nomorSambung)">
+                cek tagihan
+              </button>
+            </center>
+          </div>
+          <div class="dash-hasil" ng-show="ada">
+          <center>
+            <table>
+              <tr>
+                <td>No.</td>
+                <td>:</td>
+                <td>{{nosamw}}</td>
+              </tr>
+              <tr>
+                <td>Nama</td>
+                <td>:</td>
+                <td>{{nama}}</td>
+              </tr>
+              <tr>
+                <td>Alamat</td>
+                <td>:</td>
+                <td>{{alamat}}</td>
+              </tr>
+              <tr>
+                <td>Jml Tgkn</td>
+                <td>:</td>
+                <td>{{jum}}</td>
+              </tr>
+             <tr>
+                <td>Periode</td>
+                <td>:</td>
+                <td>{{periods}}</td>
+              </tr>
+             <tr>
+                <td>Stand Meter</td>
+                <td>:</td>
+                <td>{{met_k}}</td>
+              </tr>
+             <tr>
+                <td>Pakai Akhir</td>
+                <td>:</td>
+                <td>{{pakai}}</td>
+              </tr>
+             <tr>
+                <td>Bayar</td>
+                <td>:</td>
+                <td><h4>{{total}}</h4></td>
+              </tr>
+            </table>
+            <br>
+          </center>
+            <center>
+              <a href="#/tab/dash/{{nomorSambung}}" class="button button-outline button-positive">Rinci</a>
+              <a href="#/tab/dash/{{nomorSambung}}/{{periode}}" class="button button-outline button-positive">Foto</a>
+            </center>
+          </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

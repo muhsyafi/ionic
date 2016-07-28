@@ -1,0 +1,16 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view view-title="Foto Meter">
+  <ion-content class="padding">
+    <center>
+      <h2>Stand Meter : {{met_k}}</h2>
+    </center>
+    <div>
+      <img data-ng-src="http://www.pdambatang.co.id/meter/pict/{{pict}}" style="width: 100%; height: auto;" data-spinner-on-load>
+    </div>
+  </ion-content>
+</ion-view>

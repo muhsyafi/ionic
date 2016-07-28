@@ -1,0 +1,31 @@
+<ion-view view-title="Pengaduan">
+  <ion-content overflow-scroll="false">
+      <div class="list list-inset">
+        <label class="item item-input">
+          <i class="icon ion-search placeholder-icon"></i>
+          <input type="text" placeholder="cari" ng-model="cari">
+        </label>
+      </div>
+      <div class="list" ng-show="loader">
+        <br>
+        <br>
+        <br>
+        <br>
+          <div class="spinner"><div class="bounce1 loader" ></div><div class="bounce2"></div><div class="bounce3"></div></div>
+      </div>
+      <ion-refresher pulling-text="Tarik untuk refresh..." on-refresh="refresh()">
+      </ion-refresher>
+      <div class="list">
+          <a class="item item-avatar" href="#/tab/aduan/{{data.id}}" ng-repeat="data in aduans | filter:cari">
+            <img ng-src="{{url}}upload/{{data.pict}}">
+            <h2>{{data.nama}}, {{data.alamat}}</h2>
+            <p>{{data.jenis}}</p>
+          </a>
+      </div>
+  </ion-content>
+    <div class="adu-tambah" ng-show="aduTombol">
+      <a href="#/tab/buat/aduan">
+        <img src="img/plus.png">
+      </a>
+    </div>
+</ion-view>

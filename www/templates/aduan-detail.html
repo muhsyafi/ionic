@@ -1,0 +1,17 @@
+<ion-view view-title="Pengaduan">
+  <ion-content overflow-scroll="false">
+    <div class="list card">   
+      <div class="item item-body">
+        <h2>{{nama}}, {{alamat}}</h2>
+        <p>{{hari}}, {{tanggal | date:"MM/dd/yyyy"}}</p>
+        <img class="full-image" ng-src="{{url}}upload/{{pict}}">
+        <p>
+          {{content}}
+        </p>
+        <ui-gmap-google-map center='map.center' zoom='map.zoom'>
+            <ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id"></ui-gmap-marker>
+        </ui-gmap-google-map>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

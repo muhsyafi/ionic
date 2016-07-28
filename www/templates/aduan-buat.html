@@ -1,0 +1,54 @@
+<ion-view view-title="Buat aduan">
+  <ion-content>
+    <div class="list">
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Nama</span>
+        <input type="text" ng-model="nama">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">No. HP</span>
+        <input type="text" ng-model="hp">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Lokasi aduan</span>
+        <input type="text" ng-model="lokasi">
+      </label>
+        <li class="item item-toggle" style="height:100%">
+           Anda pelanggan PDAM ?
+           <label class="toggle toggle-positive">
+             <input type="checkbox" ng-model="yes">
+             <div class="track">
+               <div class="handle"></div>
+             </div>
+           </label>
+        </li>
+      <label ng-show="yes" class="item item-input item-stacked-label">
+        <span class="input-label">No. Sambung / Rekening</span>
+        <input type="text" ng-model="nosamw">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <label class="item item-input item-select" style="border:none; padding-left:0px !important;" >
+          <div class="input-label">
+            Jenis Aduan
+          </div>
+          <select style="width:100%" ng-model="jenis">
+            <option style="width:100%" ng-repeat="j in jenisAdu">{{j.jenis}}</option>
+          </select>
+        </label>      
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Keterangan singkat</span>
+        <textarea ng-model="ket"></textarea>
+      </label>
+      <br>
+      <center>
+          <button class="button button-outline button-positive" ng-click="getPhoto()">Ambil Foto</button>
+          <button class="button button-outline button-positive" ng-click="posting(nama,hp,lokasi,nosamw,jenis,ket,pict)">{{tbPosting}}</button>
+      </center>
+      <br>
+      <center>
+        <img ng-src="{{pict}}" width="90%" height="auto">
+      </center>
+    </div>
+  </ion-content>
+</ion-view>

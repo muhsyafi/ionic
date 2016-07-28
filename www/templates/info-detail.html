@@ -1,0 +1,30 @@
+<ion-view view-title="Informasi Pelanggan">
+  <ion-content overflow-scroll="false">
+      <div class="spinner" ng-show="loader">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="bounce1 loader" ></div><div class="bounce2"></div><div class="bounce3"></div>
+      </div>
+      <div class="list card" ng-repeat="data in datas">
+        <div class="item item-avatar">
+          <img src="http://www.pdambatang.co.id/img/logo2.png">
+          <h2>{{data.judul}}</h2>
+          <p>{{data.user}}, {{data.date_add | date:"MM/dd/yyyy 'pada' H:mm"}}</p>
+        </div>
+      
+        <div class="item item-body">
+          <img class="full-image" ng-src="{{data.img}}" data-spinner-on-load>
+          <p>
+            {{data.content}}
+          </p>
+          <p>   
+          </p>
+        </div>
+      
+      </div>
+  </ion-content>
+</ion-view>
