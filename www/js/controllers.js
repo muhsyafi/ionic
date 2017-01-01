@@ -267,8 +267,8 @@ angular.module('starter.controllers', [])
                     if (data.data.error==true) {
                       alert($ionicPopup,'Error',data.data.teks);
                     }else if (data.data.error==false){
-                        temps={"id":9999,"nama":nama,"alamat":lokasi,"jenis":jenis,"pict":res+'.jpg'};
-                        $rootScope.aduans.unshift(temps);
+                        //temps={"id":9999,"nama":nama,"alamat":lokasi,"jenis":jenis,"pict":res+'.jpg'};
+                        //$rootScope.aduans.unshift(temps);
                         $location.path('/tab/aduan');
                     }
                   };

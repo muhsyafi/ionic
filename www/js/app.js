@@ -131,6 +131,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
     .state('tab.aduan', {
       url: '/aduan',
+      cache:false,
       views: {
         'tab-aduan': {
           templateUrl: 'templates/tab-aduan.html',
